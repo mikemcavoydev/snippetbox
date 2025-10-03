@@ -1,8 +1,10 @@
 :root {
   --main-bg-color: #ededed;
   --light-bg-color: #f7f7f7;
+  --highlight-bg-color: #e9ebec;
   --border-color: #d1d1d1;
   --main-font-color: #23353b;
+  --highlight-font-color: #37758b;
 }
 
 body {
@@ -51,4 +53,58 @@ header div {
 
 a {
     text-decoration: none;
+}
+
+.content {
+    padding: 32px 0;
+}
+
+.snippet {
+    background-color: var(--light-bg-color);
+    border: solid 1px var(--border-color);
+    border-radius: 3px;
+
+    pre {
+        padding: 0px 24px;
+    }
+
+    & .metadata {
+        background-color: var(--highlight-bg-color);
+        padding: 16px 24px;
+        display: flex;
+        justify-content: space-between;
+
+        &:first-of-type {
+            border-bottom: 1px solid var(--border-color);
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+        &:last-of-type {
+            border-top: 1px solid var(--border-color);
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+    }
+}
+
+table {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    background-color: var(--highlight-bg-color);
+    border-radius: 3px;
+    border-spacing: 0px;
+
+    & tr:nth-child(odd) {
+        background-color: var(--light-bg-color);
+    }
+
+    & th,td {
+        padding: 8px 16px;
+        text-align: left;
+    }
+
+    & a {
+        color: var(--highlight-font-color);
+    }
 }
